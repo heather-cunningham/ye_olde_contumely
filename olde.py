@@ -1,10 +1,15 @@
-from flask import Flask, render_template
-import feedparser
-from openai import OpenAI
 import os
 
-# Read the OpenAI API key from the environment variable
-OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+import feedparser
+from dotenv import load_dotenv
+from flask import Flask, render_template
+from openai import OpenAI
+
+# To read the OpenAI API key from the environment variable
+# OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY")
+
+# To read the OpenAI API key from a .env file
+OPENAI_API_KEY = load_dotenv()
 
 # Read the feed limit from the environment variable or set a default value
 FEED_LIMIT = int(os.environ.get("FEED_LIMIT", "5"))  # Default to 5 articles
