@@ -11,9 +11,7 @@ FEED_LIMIT = int(os.environ.get("FEED_LIMIT", "5"))  # Default to 5 articles
 
 # Check if the API key is provided
 if not OPENAI_API_KEY:
-    raise ValueError(
-        "Please provide your OpenAI API key in the OPENAI_API_KEY environment variable."
-    )
+    raise ValueError("Please provide your OpenAI API key in the OPENAI_API_KEY environment variable.")
 
 # Initialize the OpenAI client with the API key
 client = OpenAI(api_key=OPENAI_API_KEY)
